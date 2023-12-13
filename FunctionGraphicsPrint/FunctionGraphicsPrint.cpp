@@ -7,10 +7,10 @@ using namespace std;
 
 int f2(int x)
 {
-    return 0;
+    //return 0;
     //return 
     //return 10*sin(2 * sin(2 * sin(2 * sin(x * 0.1))));
-    //return 10*sin(x*0.1);
+    return 10*sin(x*0.1);
     //return 10*cos(x*0.1);
     //return 1 / tan(x);
     //return 5*tan(x*0.1);
@@ -20,12 +20,12 @@ int f2(int x)
     //return x;
     //return sqrt(x*2);
     //return -sqrt(x);
-    //if (x == 0) { return NULL; } return 15 / x;
+    //if (x == 0) { return x; } return 15 / x;
 }
 
 int f1(int x)
 {
-    return 0;
+    //return 0;
     //return 
     //return 10*sin(2 * sin(2 * sin(2 * sin(x * 0.1))));
     //return 10*sin(x*0.1);
@@ -35,10 +35,58 @@ int f1(int x)
     //return log(x*2);
     //return x * x * x;
     //return x*x;
-    //return x;
+    return x;
     //return sqrt(x*2);
     //return -sqrt(x);
     //if (x == 0 ) { return x; } return 15/x;
+}
+
+
+double fd(double x)
+{
+    //return 10 * sin(x * 0.1);
+    //return pow(x, 3);
+    return x;
+    //if (x == 0 ) { return x; } return 15/x;
+    //return pow(x, 2);
+}
+
+void drawFunctionV2(char** arr, int h, int w, double(f)(double))
+{
+    for (double x = -w/2.; x < w/2.; x += 0.01)
+    {
+        if (f(x) <= h / 2. && f(x) >= -(h / 2.))
+        {
+            int i = -f(x)+h/2.;
+            int j = x+w/2.;
+            if (f(x-1) < f(x))
+            {
+                if (f(x) < 0.5 && f(x) > -0.5)
+                {
+                    arr[i][j] = '=';
+                }
+                else if ((f(x) > 1 || f(x) < -1) && x < 1 && x > -1)
+                {
+                    arr[i][j] = '|';
+                }
+                else arr[i][j] = '/';
+            }
+            else if (f(x -1) > f(x))
+            {
+                if (f(x) < 0.5 && f(x) > -0.5)
+                {
+                    arr[i][j] = '=';
+                }
+                else if ((f(x) > 1 || f(x) < -1) && x < 1 && x > -1)
+                {
+                    arr[i][j] = '|';
+                }
+                else arr[i][j] = '\\';
+            }
+            else
+            arr[i][j] = '*';
+        }
+    }
 }
 
 
@@ -77,6 +125,7 @@ void drawFunction(char** arr, int h, int w, int(f)(int))
     }
 }
 
+
 void clearPlane(char** arr, int h, int w)
 {
     for (int i = 0; i < h; i++)
@@ -114,6 +163,9 @@ void drawAxis(char** arr, int h, int w)
     arr[0][w / 2] = '^';
 }
 
+
+
+
 void printArr(char** arr, int h, int w)
 {
     for (int i = 0; i < h; i++)
@@ -129,7 +181,7 @@ void printArr(char** arr, int h, int w)
 int main()
 {
     int w = 141;
-    int h = 141; 
+    int h = 41; 
     char** plane = new char*[h];
     for (int i = 0; i < h; i++)
     {
@@ -139,7 +191,7 @@ int main()
     drawAxis(plane, h, w);
     drawFunction(plane, h, w, f1);
     drawFunction(plane, h, w, f2);
-
+    //drawFunctionV2(plane, h, w, fd);
     
    
     printArr(plane, h, w);

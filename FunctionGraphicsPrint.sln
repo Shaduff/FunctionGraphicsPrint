@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FunctionGraphicsPrint", "FunctionGraphicsPrint\FunctionGraphicsPrint.vcxproj", "{59775E50-71F5-4C90-B1C4-387D01786EBA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FunctionGraphPrintV2", "FunctionGraphPrintV2\FunctionGraphPrintV2.vcxproj", "{9D192EC1-EF65-4A6F-B144-76E08516658F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{59775E50-71F5-4C90-B1C4-387D01786EBA}.Release|x64.Build.0 = Release|x64
 		{59775E50-71F5-4C90-B1C4-387D01786EBA}.Release|x86.ActiveCfg = Release|Win32
 		{59775E50-71F5-4C90-B1C4-387D01786EBA}.Release|x86.Build.0 = Release|Win32
+		{9D192EC1-EF65-4A6F-B144-76E08516658F}.Debug|x64.ActiveCfg = Debug|x64
+		{9D192EC1-EF65-4A6F-B144-76E08516658F}.Debug|x64.Build.0 = Debug|x64
+		{9D192EC1-EF65-4A6F-B144-76E08516658F}.Debug|x86.ActiveCfg = Debug|Win32
+		{9D192EC1-EF65-4A6F-B144-76E08516658F}.Debug|x86.Build.0 = Debug|Win32
+		{9D192EC1-EF65-4A6F-B144-76E08516658F}.Release|x64.ActiveCfg = Release|x64
+		{9D192EC1-EF65-4A6F-B144-76E08516658F}.Release|x64.Build.0 = Release|x64
+		{9D192EC1-EF65-4A6F-B144-76E08516658F}.Release|x86.ActiveCfg = Release|Win32
+		{9D192EC1-EF65-4A6F-B144-76E08516658F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
